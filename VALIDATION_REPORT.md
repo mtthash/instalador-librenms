@@ -1,4 +1,4 @@
-# Relatório de Validação - LibreNMS Installer v2.0
+# Relatório de Validação - LibreNms Instalador v2.0
 
 **Data:** 2026-07-20  
 **Status:** ✅ Inconsistências Encontradas e Corrigidas

@@ -5,7 +5,7 @@ set -e
 clear
 
 echo "==============================================="
-echo " LibreNMS Installer v2.0"
+echo " LibreNms Instalador v2.0"
 echo " Phase 6 - LibreNMS Services"
 echo "==============================================="
 
