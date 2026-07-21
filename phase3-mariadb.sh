@@ -58,8 +58,6 @@ echo "Configurando variáveis de banco no .env..."
 
 INSTALL_DIR="/opt/librenms"
 
-sudo -u librenms php ${INSTALL_DIR}/artisan config:cache --no-interaction || true
-
 if grep -q "^DB_HOST=" ${INSTALL_DIR}/.env; then
     sed -i "s/^DB_HOST=.*/DB_HOST=localhost/" ${INSTALL_DIR}/.env
 else
@@ -86,6 +84,12 @@ fi
 
 chown librenms:librenms ${INSTALL_DIR}/.env
 chmod 640 ${INSTALL_DIR}/.env
+
+echo
+echo "Executando migrations do banco..."
+
+sudo -u librenms php ${INSTALL_DIR}/artisan config:clear --no-interaction || true
+sudo -u librenms php ${INSTALL_DIR}/artisan migrate --force --no-interaction
 
 echo
 echo "==============================================="
