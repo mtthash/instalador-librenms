@@ -51,7 +51,6 @@ echo "[3/9] Instalando pacotes base / dependências..."
 echo
 
 DEBIAN_FRONTEND=noninteractive apt install -y \
-
 acl \
 bash-completion \
 ca-certificates \
@@ -98,7 +97,6 @@ echo "[4/9] Instalando pacotes PHP..."
 echo
 
 DEBIAN_FRONTEND=noninteractive apt install -y \
-
 php-cli \
 php-common \
 php-curl \
