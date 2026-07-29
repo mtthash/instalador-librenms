@@ -51,7 +51,7 @@ EOF
 echo
 echo "Testando conexão..."
 
-mysql -u${DB_USER} -p${DB_PASSWORD} -e "USE ${DB_NAME};"
+mysql -u"${DB_USER}" -p"${DB_PASSWORD}" -e "USE ${DB_NAME};"
 
 echo
 echo "Configurando variáveis de banco no .env..."
@@ -103,4 +103,4 @@ echo "Porta........: 3306"
 
 echo
 echo "Próxima etapa:"
-echo "./phase4-php.sh"
+echo "./phase4-php-nginx.sh"

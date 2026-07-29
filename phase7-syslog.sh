@@ -56,4 +56,4 @@ echo "TCP 514"
 
 echo
 echo "Próxima etapa:"
-echo "./phase8-final.sh"
+echo "./phase8-finalize.sh"

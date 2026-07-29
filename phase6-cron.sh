@@ -90,4 +90,4 @@ echo "Cron file........ /etc/cron.d/librenms"
 
 echo
 echo "Próxima etapa:"
-echo "./phase7-final.sh"
+echo "./phase7-syslog.sh"

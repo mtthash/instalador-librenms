@@ -64,4 +64,4 @@ echo "Community......: ${SNMP_COMMUNITY}"
 
 echo
 echo "Próxima etapa:"
-echo "./phase6-services.sh"
+echo "./phase6-cron.sh"

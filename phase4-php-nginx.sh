@@ -10,6 +10,7 @@ echo " Fase 4 - PHP-FPM + Nginx"
 echo "==============================================="
 
 HOSTNAME_WEB="${SERVER_NAME}"
+TIMEZONE="${TIMEZONE:-America/Sao_Paulo}"
 
 PHP_VERSION=$(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;')
 
@@ -19,7 +20,7 @@ echo "Versão do PHP detectada: ${PHP_VERSION}"
 echo
 echo "Configurando timezone..."
 
-timedatectl set-timezone America/Sao_Paulo
+timedatectl set-timezone "${TIMEZONE}"
 
 for INI in \
 /etc/php/${PHP_VERSION}/fpm/php.ini \
@@ -27,7 +28,7 @@ for INI in \
 do
 
 sed -i \
-'s#^;*date.timezone *=.*#date.timezone = America/Sao_Paulo#' \
+"s#^;*date.timezone *=.*#date.timezone = ${TIMEZONE}#" \
 $INI
 
 done
@@ -80,7 +81,7 @@ echo "==============================================="
 
 echo
 echo "PHP...............: ${PHP_VERSION}"
-echo "Timezone..........: America/Sao_Paulo"
+echo "Timezone..........: ${TIMEZONE}"
 echo "PHP-FPM Socket....: /run/php-fpm-librenms.sock"
 
 echo
